@@ -70,14 +70,14 @@ def forecast_moisture(depth_data, periods, freq='D'):
     return forecast, model
 
 # Load Data
-input_file_path = 'C:/Users/KTM/Desktop/Hackthon_KSUTAPS/Datasets/Nutron tubes/TRT_Plot_Summary.xlsx'
-output_file_path = 'C:/Users/KTM/Desktop/Hackthon_KSUTAPS/Datasets/Nutron tubes/TRT_Plot_Summary_Updated.xlsx'
+input_file_path   = 'data/TRT_Plot_Summary.xlsx'
+output_file_path = 'data/TRT_Plot_Summary_Updated.xlsx'
 trt_summary_df = extract_trt_plot_summary(input_file_path, output_file_path)
 
-file_path = 'C:/Users/KTM/Desktop/Hackthon_KSUTAPS/Datasets/Nutron tubes/24 KSU TAPS Neutron Tube Readings_VWC.csv'
+file_path = 'data/24 KSU TAPS Neutron Tube Readings_VWC.csv'
 df = pd.read_csv(file_path, parse_dates=['Date'], date_parser=lambda x: pd.to_datetime(x, format='%m/%d/%Y'))
 
-averaged_weekly_path = 'C:/Users/KTM/Desktop/Hackthon_KSUTAPS/Datasets/Sensor Data/Averaged_weekly.xlsx'
+averaged_weekly_path = 'data/Averaged_weekly.xlsx'
 sheets = pd.read_excel(averaged_weekly_path, sheet_name=None)
 
 # Tab Configuration
